@@ -1,0 +1,89 @@
+/* -------------------------------------------------------
+    responsive.pc.css — PCファースト調整（768px未満で縮退）
+-------------------------------------------------------- */
+@layer responsive {
+  /* 768px 未満のときだけ、モバイル向けに縮退させる */
+  @media (max-width: 767.98px) {
+    /* ハンバーガー表示、ナビはドロップダウン風 */
+
+    [data-lg-nav] {
+      position: absolute;
+      top: calc(100% + var(--space-xs));
+      right: 0;
+      width: 100%;
+      background: var(--color-bg-alt);
+      border-top: 1px solid var(--color-border);
+      transform: translateY(-0.5rem);
+      opacity: 0;
+      pointer-events: none;
+      transition:
+        opacity var(--dur) var(--ease),
+        transform var(--dur) var(--ease);
+    }
+
+    [data-lg-nav][data-state="open"] {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .primary-nav .nav-list {
+      flex-direction: column;
+      gap: var(--space-s);
+      padding: var(--space-m);
+    }
+
+    .lg-nav-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      z-index: 100;
+    }
+
+    /* 三本線の共通設定 */
+    .lg-nav-toggle::before,
+    .lg-nav-toggle::after,
+    .lg-nav-toggle span:not(.sr-only) {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: currentColor; /* 文字色に合わせる */
+      transition:
+        transform var(--dur) var(--ease),
+        opacity var(--dur) var(--ease);
+    }
+
+    /* 開いた時のアニメーション (×印にする) */
+    .lg-nav-toggle[aria-expanded="true"]::before {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .lg-nav-toggle[aria-expanded="true"] span:not(.sr-only) {
+      opacity: 0;
+    }
+    .lg-nav-toggle[aria-expanded="true"]::after {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+  /* ========================================
+  セクション works
+  ======================================== */
+    .works__tab-list {
+      grid-auto-columns: initial;
+    }
+
+  /* ========================================
+  セクション contact
+  ======================================== */
+    .contact-form {
+      padding: var(--space-m);
+    }
+  }
+}

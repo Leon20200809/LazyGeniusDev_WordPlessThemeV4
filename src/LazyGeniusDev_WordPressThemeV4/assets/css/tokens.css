@@ -1,0 +1,117 @@
+/* -----------------------------------------
+    tokens.css  — LG Design Tokens (minimal)
+    役割: プロジェクト全体の“定数”を定義
+    変更は原則ここだけで完結させる
+------------------------------------------*/
+@layer tokens {
+  :root {
+    /* 画像URL */
+    --hero-bg-image: url("../images/hero-bg-image.png");
+
+    /* 見出しフォント */
+    --font-heading: "Shippori Mincho", serif;
+    /* メインフォント */
+    --font-body: "Noto Sans JP", sans-serif;
+    /* --font-body: "Shippori Mincho", serif; */
+
+    /* メイン背景 */
+    --color-bg: #0e0f11;
+    /* サブ背景 */
+    --color-bg-alt: #1a1c1f;
+    /* メイン文字 */
+    --color-text: #e0f8f8;
+    /* アクセント */
+    --color-accent: #55d1c9;
+    /* ホバー */
+    --color-accent-hover: #3dbbb3;
+    /* 補足文字 */
+    --color-muted: #aaa;
+    /* 境界線 */
+    --color-border: #2b2f33;
+
+    /* ボタン */
+    --btn-primary: #55d1c9;
+    /* サブボタン */
+    --btn-secondary: #ced4da;
+    /* ボタン背景 */
+    --btn-bg: #ffffff;
+
+    /* ===== 流体フォントサイズ (Fluid Typography: 375px - 1200px) ===== */
+    /* 11px ~ 12px（最小：キャプション、補助テキストなど） */
+    --fs-xs: clamp(0.6875rem, 0.65rem + 0.1vw, 0.75rem);
+
+    /* 13px ~ 14px（小：注釈、メタ情報、ラベルなど） */
+    --fs-sm: clamp(0.8125rem, 0.8rem + 0.1vw, 0.875rem);
+
+    /* 15px ~ 16px（標準：本文） */
+    --fs-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
+
+    /* 18px ~ 22px（中見出し、リード文） */
+    --fs-lg: clamp(1.125rem, 1rem + 0.6vw, 1.375rem);
+
+    /* 28px ~ 40px（大見出し） */
+    --fs-xl: clamp(1.75rem, 1.5rem + 2vw, 2.5rem);
+
+    /* 36px ~ 56px（ヒーローセクション、特大見出し） */
+    --fs-2xl: clamp(2.25rem, 2rem + 4vw, 3.5rem);
+
+    /* ===== 流体余白 (Fluid Spacing) ===== */
+    /* 固定（8px） */
+    --space-xs: 0.5rem;
+    /* 12px ~ 14px */
+    --space-s: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+    /* 16px ~ 20px */
+    --space-m: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+    /* 24px ~ 32px */
+    --space-l: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    /* 32px ~ 56px */
+    --space-xl: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+    /* 48px ~ 96px */
+    --space-2xl: clamp(3rem, 2rem + 5vw, 6rem);
+
+    /* ===== 角丸 (Radius) ===== */
+    /* 4px */
+    --radius-s: 0.25rem;
+    /* 8px */
+    --radius-m: 0.5rem;
+    /* 16px */
+    --radius-l: 1rem;
+
+    /* ===== アニメーション設定 ===== */
+    /* 緩急（イージング） */
+    --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+    /* 速度（デュレーション） */
+    --dur: 200ms;
+
+    /* ===== コンテンツ幅 ===== */
+    /* PC時の最大幅（1026px） */
+    --container-width: 64.125rem;
+    /* スマホ時の基準幅（343px / 375px画面で左右余白16pxずつ） */
+    --container-width-sp: 21.4375rem;
+
+    /* ===== Header / Overlay 系 ===== */
+    --header-height: 5rem;
+    --header-z-index: 1000;
+    --nav-z-index: 1100;
+    --anchor-offset: 6rem;
+
+    /* ===== 透過背景 ===== */
+    --color-bg-glass: rgba(14, 15, 17, 0.92);
+    --color-bg-panel: rgba(26, 28, 31, 0.98);
+    --color-border-light: rgba(255, 255, 255, 0.08);
+
+    /* ===== シャドウ ===== */
+    --shadow-m: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.24);
+    --shadow-l: 0 1rem 2rem rgba(0, 0, 0, 0.32);
+
+    /* ===== フォーカス ===== */
+    --focus-ring: 0 0 0 2px rgba(85, 209, 201, 0.45);
+
+    /* ===== ハンバーガーボタン ===== */
+    --hamburger-size: 2.75rem;
+    --hamburger-line-width: 1.5rem;
+    --hamburger-line-height: 0.125rem;
+    --hamburger-gap: 0.375rem;
+    --hamburger-shift: 0.5rem;
+  }
+}

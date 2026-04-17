@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LG UI 三種スターター</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- <link rel="stylesheet" href="./assets/css/components.css" /> -->
+
+    <!-- JS -->
+    <script type="module" defer src="./assets/js/init.js"></script>
+</head>
+
+<body>
+    <!-- スキップ -->
+    <a class="skip-link" href="#main">本文へスキップ</a>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">LG Components</h1>
+
+            <!-- ハンバーガー -->
+            <button
+                class="lg-nav-toggle"
+                data-lg-hamburger
+                aria-controls="primary-nav"
+                aria-expanded="false">
+                <span class="sr-only">メニュー</span>
+                <span aria-hidden="true">☰</span>
+            </button>
+
+            <!-- ナビ -->
+            <nav
+                id="primary-nav"
+                class="primary-nav"
+                data-lg-nav
+                data-state="closed">
+                <ul class="nav-list">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#flow">Accordion</a></li>
+                    <li><a href="#works">Tabs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main id="main" class="site-main">
+        <div class="container">
+
+            <!-- Flow / Accordion -->
+            <section
+                id="flow"
+                class="block flow"
+                aria-label="Flow Accordion Demo"
+                data-lg-accordion>
+                <h2 class="block-title">Accordion</h2>
+
+                <h3 class="acc-h">
+                    <button
+                        class="acc-trigger"
+                        data-lg-acc-trigger
+                        aria-expanded="false"
+                        aria-controls="flow-panel-1"
+                        id="flow-heading-1">
+                        見出し1
+                    </button>
+                </h3>
+                <div
+                    id="flow-panel-1"
+                    class="acc-panel"
+                    role="region"
+                    aria-labelledby="flow-heading-1"
+                    hidden>
+                    <p>パネル1の内容。</p>
+                </div>
+
+                <h3 class="acc-h">
+                    <button
+                        class="acc-trigger"
+                        data-lg-acc-trigger
+                        aria-expanded="false"
+                        aria-controls="flow-panel-2"
+                        id="flow-heading-2">
+                        見出し2
+                    </button>
+                </h3>
+                <div
+                    id="flow-panel-2"
+                    class="acc-panel"
+                    role="region"
+                    aria-labelledby="flow-heading-2"
+                    hidden>
+                    <p>パネル2の内容。</p>
+                </div>
+            </section>
+
+            <!-- Works / Tabs -->
+            <section
+                id="works"
+                class="block works"
+                aria-label="Works Tabs Demo"
+                data-lg-tabs>
+                <h2 class="block-title">Tabs</h2>
+
+                <div role="tablist" aria-label="制作実績カテゴリ" class="tabs-list">
+                    <button
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="works-panel-1"
+                        id="works-tab-1"
+                        tabindex="0">
+                        Tab 1
+                    </button>
+
+                    <button
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="works-panel-2"
+                        id="works-tab-2"
+                        tabindex="-1">
+                        Tab 2
+                    </button>
+
+                    <button
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="works-panel-3"
+                        id="works-tab-3"
+                        tabindex="-1">
+                        Tab 3
+                    </button>
+                </div>
+
+                <div
+                    id="works-panel-1"
+                    role="tabpanel"
+                    aria-labelledby="works-tab-1">
+                    <p>面1の内容。</p>
+                </div>
+
+                <div
+                    id="works-panel-2"
+                    role="tabpanel"
+                    aria-labelledby="works-tab-2"
+                    hidden>
+                    <p>面2の内容。</p>
+                </div>
+
+                <div
+                    id="works-panel-3"
+                    role="tabpanel"
+                    aria-labelledby="works-tab-3"
+                    hidden>
+                    <p>面3の内容。</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <small>&copy; LazyGenius.dev</small>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<!--
+========================================
+LG UI 必須属性メモ
+========================================
+
+【ハンバーガー】
+
+data-lg-hamburger
+- ハンバーガーボタンをJSで取得するための属性
+
+aria-controls="primary-nav"
+- このボタンがどのナビを開閉するか指定
+
+aria-expanded="false"
+- 開いているか閉じているか
+- false = 閉
+- true = 開
+
+data-lg-nav
+- 開閉されるナビ側の属性
+
+data-state="closed"
+- JS側で closed / open を切り替える用
+
+
+【アコーディオン】
+
+data-lg-accordion
+- アコーディオン全体の親要素
+
+data-lg-acc-trigger
+- 開閉ボタンとして使う要素
+
+aria-expanded="false"
+- パネルが開いているかどうか
+
+aria-controls="flow-panel-1"
+- このボタンが開閉するパネルID
+
+id="flow-heading-1"
+- 見出し側のID
+- パネルの aria-labelledby と対応させる
+
+role="region"
+- 開閉される領域であることを示す
+
+aria-labelledby="flow-heading-1"
+- どの見出しに対応するパネルか示す
+
+hidden
+- 初期状態で非表示にする
+
+
+【タブ】
+
+data-lg-tabs
+- タブ全体の親要素
+
+role="tablist"
+- タブグループ全体
+
+role="tab"
+- タブボタン
+
+aria-selected="true"
+- 現在選択中のタブ
+
+aria-controls="works-panel-1"
+- このタブが表示するパネルID
+
+tabindex="0"
+- キーボードでフォーカス可能
+- 初期表示タブだけ0
+
+tabindex="-1"
+- 非アクティブなタブ
+- Tabキー移動対象から外す
+
+role="tabpanel"
+- タブに対応する表示領域
+
+aria-labelledby="works-tab-1"
+- どのタブに対応するパネルか示す
+
+hidden
+- 非表示パネル
+-->
