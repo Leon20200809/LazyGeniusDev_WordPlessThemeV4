@@ -1,3 +1,4 @@
+<!-- section-about.php -->
 <section class="about" id="about">
     <div class="container">
         <h2 class="section-title">About</h2>
@@ -16,9 +17,9 @@
                 </p>
 
                 <p class="about__description">
-                    現在はLaravel・React・TypeScriptも学習中。
-                    将来的には、設計から実装・運用まで任せられる
-                    フルスタックエンジニアを目指しています。
+                    Laravel・React・TypeScript・Next.jsを用いた開発にも取り組み、
+                    実際に小規模Webアプリや業務効率化ツールを制作しています。
+                    設計から実装・運用まで一貫して担えるエンジニアを目指しています。
                 </p>
             </div>
 
@@ -36,7 +37,7 @@
 
                     <div class="about__item">
                         <dt>開発思想</dt>
-                        <dd>保守しやすく、再利用しやすい設計を重視</dd>
+                        <dd>非エンジニアにも伝わるよう、例えを用いて仕組みを分かりやすく説明し、認識のズレを防ぐことを重視しています。</dd>
                     </div>
                 </dl>
             </div>

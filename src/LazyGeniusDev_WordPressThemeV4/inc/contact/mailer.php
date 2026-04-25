@@ -1,4 +1,5 @@
 <?php
+
 /**
  * mailer.php
  *
@@ -46,4 +47,8 @@ function lg_contact_send_admin_mail(array $form_data): bool
     }
 
     return wp_mail($to, $subject, $body, $headers);
+}
+
+function lg_contact_send_user_mail(array $form_data) {
+    
 }

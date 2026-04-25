@@ -9,32 +9,31 @@
     --hero-bg-image: url("../images/hero-bg-image.png");
 
     /* 見出しフォント */
-    --font-heading: "Shippori Mincho", serif;
+    --font-heading: "Shippori Mincho", "Noto Serif JP", serif;
     /* メインフォント */
-    --font-body: "Noto Sans JP", sans-serif;
+    --font-body: "Noto Sans JP", system-ui, sans-serif;
     /* --font-body: "Shippori Mincho", serif; */
 
-    /* メイン背景 */
-    --color-bg: #0e0f11;
-    /* サブ背景 */
-    --color-bg-alt: #1a1c1f;
-    /* メイン文字 */
-    --color-text: #e0f8f8;
-    /* アクセント */
-    --color-accent: #55d1c9;
-    /* ホバー */
-    --color-accent-hover: #3dbbb3;
-    /* 補足文字 */
-    --color-muted: #aaa;
-    /* 境界線 */
-    --color-border: #2b2f33;
-
+    /* メイン背景（完全な黒より少し柔らかい） */
+    --color-bg: #141414;
+    /* サブ背景（カード・セクション） */
+    --color-bg-alt: #222222;
+    /* メイン文字（やや温かみのある白） */
+    --color-text: #cdbfb2;
+    /* アクセント（金） */
+    --color-accent: #bf9142;
+    /* ホバー（金を少し明るく） */
+    --color-accent-hover: #d4a657;
+    /* 補足文字（彩度を落としたベージュ） */
+    --color-muted: #a89a8f;
+    /* 境界線（背景に馴染ませる） */
+    --color-border: #3c2625;
     /* ボタン */
-    --btn-primary: #55d1c9;
-    /* サブボタン */
-    --btn-secondary: #ced4da;
+    --btn-primary: #bf9142;
+    /* サブボタン（暗め） */
+    --btn-secondary: #222222;
     /* ボタン背景 */
-    --btn-bg: #ffffff;
+    --btn-bg: #3c2625;
 
     /* ===== 流体フォントサイズ (Fluid Typography: 375px - 1200px) ===== */
     /* 11px ~ 12px（最小：キャプション、補助テキストなど） */
@@ -54,6 +53,9 @@
 
     /* 36px ~ 56px（ヒーローセクション、特大見出し） */
     --fs-2xl: clamp(2.25rem, 2rem + 4vw, 3.5rem);
+
+    --fs-hero-title: clamp(1.875rem, 1.35rem + 2.8vw, 3.5rem);
+    --fs-hero-lead: clamp(0.9375rem, 0.85rem + 0.4vw, 1.125rem);
 
     /* ===== 流体余白 (Fluid Spacing) ===== */
     /* 固定（8px） */

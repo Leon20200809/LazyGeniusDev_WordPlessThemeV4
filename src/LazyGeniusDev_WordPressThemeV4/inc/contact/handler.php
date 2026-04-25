@@ -1,4 +1,5 @@
 <?php
+
 /**
  * handler.php
  *
@@ -58,6 +59,7 @@ function lg_contact_send()
 
     $form_data = wp_unslash($_POST);
 
+    // バリデーション実行
     $errors = lg_contact_validate($form_data, $field_rules);
 
     if (!empty($errors)) {
@@ -67,12 +69,11 @@ function lg_contact_send()
         ]);
     }
 
-    wp_send_json_success([
-        'message' => 'バリデーション通過',
-        "data" => $form_data,
-    ]);
-
+    // WordPressが送信 判定待ち
     $mail_sent = lg_contact_send_admin_mail($form_data);
+
+    // 自動返信したいならここにユーザーメール送信関数をつくる
+    // $user_mail_sent = lg_contact_send_user_mail($form_data);
 
     if (!$mail_sent) {
         wp_send_json_error([

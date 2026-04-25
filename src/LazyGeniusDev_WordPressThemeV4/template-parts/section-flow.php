@@ -1,3 +1,4 @@
+<!-- section-flow.php -->
 <section class="flow" id="flow">
     <div class="container">
         <h2 class="section-title">Flow</h2>
@@ -15,7 +16,7 @@
                     aria-expanded="false"
                     aria-controls="flow-panel-1"
                     id="flow-heading-1">
-                    01 お問い合わせ
+                    お問い合わせ（Step 1）
                 </button>
             </h3>
             <div
@@ -36,7 +37,7 @@
                     aria-expanded="false"
                     aria-controls="flow-panel-2"
                     id="flow-heading-2">
-                    02 ヒアリング
+                    ヒアリング（Step 2）
                 </button>
             </h3>
             <div
@@ -57,7 +58,7 @@
                     aria-expanded="false"
                     aria-controls="flow-panel-3"
                     id="flow-heading-3">
-                    03 ご提案・お見積もり
+                    ご提案・お見積もり（Step 3）
                 </button>
             </h3>
             <div
@@ -78,7 +79,7 @@
                     aria-expanded="false"
                     aria-controls="flow-panel-4"
                     id="flow-heading-4">
-                    04 制作開始
+                    制作開始（Step 4）
                 </button>
             </h3>
             <div
@@ -99,7 +100,7 @@
                     aria-expanded="false"
                     aria-controls="flow-panel-5"
                     id="flow-heading-5">
-                    05 確認・修正
+                    確認・修正（Step 5）
                 </button>
             </h3>
             <div
@@ -120,7 +121,7 @@
                     aria-expanded="false"
                     aria-controls="flow-panel-6"
                     id="flow-heading-6">
-                    06 納品・公開
+                    納品・公開（Step 6）
                 </button>
             </h3>
             <div
