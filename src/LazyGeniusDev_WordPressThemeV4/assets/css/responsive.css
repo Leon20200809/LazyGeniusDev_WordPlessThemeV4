@@ -83,11 +83,39 @@
     .about__info {
       padding: var(--space-m);
     }
+
+    .about__text {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .about__profile {
+      grid-template-columns: 1fr;
+      gap: var(--space-s);
+    }
+
+    .about__visual {
+      max-width: 420px;
+      margin-inline: auto;
+    }
     /* ========================================
   セクション works
   ======================================== */
     .works__tab-list {
       grid-auto-columns: initial;
+    }
+
+    .works__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .works__support {
+      padding: var(--space-m);
+    }
+
+    .works__support-grid {
+      grid-template-columns: 1fr;
     }
 
     /* ========================================

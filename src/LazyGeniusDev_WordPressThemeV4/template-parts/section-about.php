@@ -23,23 +23,32 @@
                 </p>
             </div>
 
-            <div class="about__info">
-                <dl class="about__list">
-                    <div class="about__item">
-                        <dt>得意分野</dt>
-                        <dd>WordPress / PHP / JavaScript</dd>
-                    </div>
+            <div class="about__profile">
+                <figure class="about__visual">
+                    <img
+                        src="<?= esc_url(lg_get_img_uri('/profile-leonc.png')); ?>"
+                        alt="Leon.Cのキャラクター風プロフィールイラスト"
+                        class="about__image">
+                </figure>
 
-                    <div class="about__item">
-                        <dt>制作できるもの</dt>
-                        <dd>企業サイト / LP / フォーム / 管理画面 / 小規模Webアプリ</dd>
-                    </div>
+                <div class="about__info">
+                    <dl class="about__list">
+                        <div class="about__item">
+                            <dt>得意分野</dt>
+                            <dd>WordPress / PHP / JavaScript</dd>
+                        </div>
 
-                    <div class="about__item">
-                        <dt>開発思想</dt>
-                        <dd>非エンジニアにも伝わるよう、例えを用いて仕組みを分かりやすく説明し、認識のズレを防ぐことを重視しています。</dd>
-                    </div>
-                </dl>
+                        <div class="about__item">
+                            <dt>制作できるもの</dt>
+                            <dd>企業サイト / LP / フォーム / 管理画面 / 小規模Webアプリ</dd>
+                        </div>
+
+                        <div class="about__item">
+                            <dt>開発思想</dt>
+                            <dd>非エンジニアにも伝わるよう、例えを用いて仕組みを分かりやすく説明し、認識のズレを防ぐことを重視しています。</dd>
+                        </div>
+                    </dl>
+                </div>
             </div>
         </div>
     </div>

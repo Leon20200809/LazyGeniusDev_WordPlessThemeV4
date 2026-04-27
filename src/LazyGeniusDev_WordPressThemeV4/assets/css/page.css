@@ -82,80 +82,88 @@
   セクション about
   ======================================== */
   .about {
-    padding-block: var(--space-2xl);
-    background: var(--color-bg);
-    color: var(--color-text);
+    padding-block: var(--space-3xl);
   }
 
   .about__body {
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+    gap: var(--space-xl);
+    margin-bottom: var(--space-m);
+  }
+
+  .about__text {
+    max-width: 880px;
+    margin-inline: auto;
+  }
+
+  .about__profile {
+    display: grid;
+    grid-template-columns: minmax(280px, 420px) 1fr;
     gap: var(--space-xl);
     align-items: start;
   }
 
-  .about__text {
-    max-width: 42rem;
+  .about__visual {
+    margin: 0;
+    padding: var(--space-xs);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 40%, transparent);
+    border-radius: var(--radius-lg);
+    background: color-mix(
+      in srgb,
+      var(--color-bg) 88%,
+      var(--color-accent) 12%
+    );
+    box-shadow: var(--shadow-m);
+  }
+
+  .about__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+  }
+
+  .about__content {
+    display: grid;
+    gap: var(--space-lg);
   }
 
   .about__lead {
     margin-bottom: var(--space-m);
-    font-family: var(--font-heading);
     font-size: var(--fs-lg);
-    line-height: 1.9;
-    color: var(--color-text);
+    font-weight: 700;
+    line-height: 1.8;
   }
 
   .about__description {
-    margin-bottom: var(--space-m);
-    font-size: var(--fs-base);
     line-height: 2;
-    color: var(--color-muted);
   }
 
-  .about__description:last-child {
-    margin-bottom: 0;
-  }
-
-  .about__info {
-    padding: var(--space-l);
-    background: var(--color-bg-alt);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-m);
-    box-shadow: var(--shadow-m);
+  .about__description + .about__description {
+    margin-top: var(--space-m);
   }
 
   .about__list {
-    margin: 0;
+    display: grid;
+    gap: var(--space-m);
   }
 
   .about__item {
-    padding-block: var(--space-m);
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .about__item:first-child {
-    padding-top: 0;
-  }
-
-  .about__item:last-child {
-    padding-bottom: 0;
-    border-bottom: none;
+    padding: var(--space-m);
+    border: 1px solid color-mix(in srgb, var(--color-text) 16%, transparent);
+    border-radius: var(--radius-md);
+    background: color-mix(in srgb, var(--color-bg) 92%, white 8%);
   }
 
   .about__item dt {
-    margin-bottom: var(--space-xs);
-    font-size: var(--fs-sm);
+    margin-bottom: var(--space-s);
     font-weight: 700;
     color: var(--color-accent);
-    letter-spacing: 0.08em;
   }
 
   .about__item dd {
     margin: 0;
-    font-size: var(--fs-base);
     line-height: 1.8;
-    color: var(--color-text);
   }
 
   /* ========================================
@@ -247,6 +255,53 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .works__support {
+    margin-top: var(--space-2xl);
+    padding: var(--space-xl);
+    border: 1px solid color-mix(in srgb, var(--color-text) 16%, transparent);
+    border-radius: var(--radius-lg);
+    background: color-mix(in srgb, var(--color-bg) 92%, white 8%);
+  }
+
+  .works__support-title {
+    margin-bottom: var(--space-s);
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    color: var(--color-accent);
+  }
+
+  .works__support-lead {
+    max-width: 760px;
+    margin-bottom: var(--space-l);
+    line-height: 1.9;
+  }
+
+  .works__support-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-m);
+  }
+
+  .works__support-item {
+    padding: var(--space-m);
+    border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+    border-radius: var(--radius-md);
+    background: color-mix(in srgb, var(--color-bg) 96%, white 4%);
+  }
+
+  .works__support-item h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .works__support-item p {
+    margin: 0;
+    line-height: 1.8;
+  }
+
+  @media (width < 768px) {
+
   }
 
   /* ========================================
