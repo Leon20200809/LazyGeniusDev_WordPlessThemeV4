@@ -7,6 +7,7 @@
   :root {
     /* 画像URL */
     --hero-bg-image: url("../images/hero-bg-image.webp");
+    --hero-bg-image-sp: url("../images/hero-bg-image-sp.webp");
 
     /* 見出しフォント */
     --font-heading: "Shippori Mincho", "Noto Serif JP", serif;

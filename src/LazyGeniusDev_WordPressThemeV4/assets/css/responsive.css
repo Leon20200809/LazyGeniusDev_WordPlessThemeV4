@@ -4,8 +4,11 @@
 @layer responsive {
   /* 768px 未満のときだけ、モバイル向けに縮退させる */
   @media (max-width: 767.98px) {
-    /* ハンバーガー表示、ナビはドロップダウン風 */
+    .hero {
+      background-image: var(--hero-bg-image-sp);
+    }
 
+    /* ハンバーガー表示、ナビはドロップダウン風 */
     [data-lg-nav] {
       position: absolute;
       top: calc(100% + var(--space-xs));
