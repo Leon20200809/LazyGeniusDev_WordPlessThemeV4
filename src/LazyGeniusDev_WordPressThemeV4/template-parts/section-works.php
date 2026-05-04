@@ -16,9 +16,9 @@ $works_tabs = [
 $works_items = [
     [
         'title' => 'WordPress オリジナルテーマ制作',
-        'text' => 'オリジナルデザインをもとに構築した企業サイトです。',
-        'tech' => 'WordPress / PHP / JavaScript / CSS',
-        'point' => 'テンプレートパーツ化、CSS設計、フォーム実装など、再利用しやすく保守しやすい構成を意識して制作。',
+        'text' => 'オリジナルデザインをもとに構築し、GitHub ActionsでXserver本番環境へ自動デプロイできるWordPressテーマです。',
+        'tech' => 'WordPress / PHP / JavaScript / CSS / GitHub Actions / Xserver',
+        'point' => 'テンプレートパーツ化、CSS設計、フォーム実装に加え、GitHubからテーマフォルダのみを本番反映する運用を構築し、保守性と更新作業の効率化を意識して制作。',
         'image' => 'works-sample.webp',
         'category' => 'wordpress',
         'url' => $git_hub_url,
