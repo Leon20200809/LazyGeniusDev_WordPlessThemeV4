@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: リポジトリのコードをチェックアウト（取得）
-        uses: actions/checkout@v3 # GitHubのコードを取得する公式アクション 「checkout（チェックアウト）」というのは、「取り出して使えるようにする」
+        uses: actions/checkout@v4 # GitHubのコードを取得する公式アクション 「checkout（チェックアウト）」というのは、「取り出して使えるようにする」
 
       - name: SSH秘密鍵の設定
         uses: shimataro/ssh-key-action@v2 # SSH接続を安全に行うためのアクション
@@ -25,14 +25,12 @@ jobs:
           name: id_rsa # name: id_rsa とすることで、~/.ssh/id_rsa という名前で秘密鍵ファイルを保存する（つまりSSHがデフォで読みに行く場所に置く）。
           known_hosts: ${{ secrets.KNOWN_HOSTS }} # SSH接続先の公開鍵情報（事前にssh-keyscanで取得してSecrets登録）
 
-      - name: XserverへSSH接続してgit pullを実行（最新テーマを取得）
+      - name: Xserverへテーマフォルダのみをrsyncで転送
 
         # GitHubリポジトリ内の指定フォルダだけをXserverにアップロードする処理。
         run:
           | # | は「パイプ」と読む run: の後に使うと、複数行にわたるコマンドを一つのまとまりとして記述できる。
-
-
           echo "🔄 テーマフォルダをrsyncで転送します"
           rsync -avz -e "ssh -p 10022" \
             ./src/LazyGeniusDev_WordPressThemeV4/ \
-            xs227617@sv16485.xserver.jp:/home/xs227617/lazygenius.dev/public_html/wp-content/themes/LazyGeniusDev_WordPressThemeV4
+            xs227617@sv16485.xserver.jp:/home/xs227617/lazygenius.dev/public_html/wp-content/themes/LazyGeniusDev_WordPressThemeV4/
