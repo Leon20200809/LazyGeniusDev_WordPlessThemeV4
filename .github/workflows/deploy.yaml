@@ -9,6 +9,17 @@ on:
     branches:
       - main # mainブランチへのpushをトリガーにする
 
+# env: このワークフロー内で使い回す設定値
+# サイト名・テーマ名・転送先パスなどをここに集めることで、
+# 別テーマや別サイトに流用するとき、修正箇所を減らせる。
+env:
+  THEME_DIR: LazyGeniusDev_WordPressThemeV4 # WordPressのテーマフォルダ名
+  LOCAL_THEME_PATH: ./src/LazyGeniusDev_WordPressThemeV4/ # GitHubリポジトリ内の転送元テーマフォルダ
+  REMOTE_USER: xs227617 # XserverのSSHユーザー名
+  REMOTE_HOST: sv16485.xserver.jp # XserverのSSH接続先ホスト名
+  REMOTE_PORT: 10022 # XserverのSSHポート番号
+  REMOTE_WP_THEMES_PATH: /home/xs227617/lazygenius.dev/public_html/wp-content/themes # 本番WordPressのthemesディレクトリ
+
 # jobs: ワークフローの内容
 jobs:
   deploy:
@@ -25,12 +36,12 @@ jobs:
           name: id_rsa # name: id_rsa とすることで、~/.ssh/id_rsa という名前で秘密鍵ファイルを保存する（つまりSSHがデフォで読みに行く場所に置く）。
           known_hosts: ${{ secrets.KNOWN_HOSTS }} # SSH接続先の公開鍵情報（事前にssh-keyscanで取得してSecrets登録）
 
-      - name: Xserverへテーマフォルダのみをrsyncで転送
-
+      - name: Xserverへテーマフォルダをrsyncで転送
         # GitHubリポジトリ内の指定フォルダだけをXserverにアップロードする処理。
-        run:
-          | # | は「パイプ」と読む run: の後に使うと、複数行にわたるコマンドを一つのまとまりとして記述できる。
+        run: |
+          # | は「パイプ」と読む run: の後に使うと、複数行にわたるコマンドを一つのまとまりとして記述できる。
           echo "🔄 テーマフォルダをrsyncで転送します"
-          rsync -avz -e "ssh -p 10022" \
-            ./src/LazyGeniusDev_WordPressThemeV4/ \
-            xs227617@sv16485.xserver.jp:/home/xs227617/lazygenius.dev/public_html/wp-content/themes/LazyGeniusDev_WordPressThemeV4/
+
+          rsync -avz -e "ssh -p ${REMOTE_PORT}" \
+            "${LOCAL_THEME_PATH}" \
+            "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_WP_THEMES_PATH}/${THEME_DIR}/"
