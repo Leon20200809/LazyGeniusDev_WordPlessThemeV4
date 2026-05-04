@@ -6,7 +6,7 @@
 @layer tokens {
   :root {
     /* 画像URL */
-    --hero-bg-image: url("../images/hero-bg-image.png");
+    --hero-bg-image: url("../images/hero-bg-image.webp");
 
     /* 見出しフォント */
     --font-heading: "Shippori Mincho", "Noto Serif JP", serif;

@@ -59,6 +59,20 @@
     height: auto;
   }
 
+  /* ========== Lists ========== */
+  ul,
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* 記事本文などでリストを使いたい時用の予備 */
+  .prose ul {
+    list-style: disc;
+    padding-inline-start: var(--space-l);
+  }
+
   /* ========== Container ========== */
   .container {
     max-width: var(--container-width);
