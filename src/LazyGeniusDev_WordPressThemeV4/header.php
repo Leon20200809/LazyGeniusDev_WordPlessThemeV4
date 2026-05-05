@@ -19,7 +19,7 @@
 
             <a class="site-header__logo" href="<?= esc_url(home_url('/')); ?>" aria-label="<?php bloginfo('name'); ?> ホームへ">
                 <img
-                    src="<?= esc_url(lg_get_img_uri("/sitelogo-header.png")); ?>"
+                    src="<?= esc_url(lg_get_img_uri("/sitelogo-black.webp")); ?>"
                     alt="<?= esc_attr(get_bloginfo('name')); ?>">
             </a>
 

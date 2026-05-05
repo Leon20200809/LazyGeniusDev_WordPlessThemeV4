@@ -10,7 +10,6 @@
     left: 0;
     width: 100%;
     border-bottom: 1px solid var(--color-border);
-    top: 0;
     z-index: 1000;
     backdrop-filter: blur(12px);
   }
@@ -37,10 +36,10 @@
     height: 2.5rem;
   }
 
-  .site-footer{
+  .site-footer {
     background-color: var(--color-bg-alt);
   }
-  .footer-copy{
+  .footer-copy {
     padding-inline: var(--space-m);
     padding-block: var(--space-l);
     text-align: center;
@@ -140,7 +139,6 @@
   .primary-nav__link {
     text-decoration: none !important;
   }
-
 
   /* PC時は常時表示 */
   @media (min-width: 768px) {
