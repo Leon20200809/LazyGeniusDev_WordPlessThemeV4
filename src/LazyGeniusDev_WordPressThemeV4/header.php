@@ -4,6 +4,7 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<?php bloginfo('description'); ?>">
 
     <!-- favicon -->
     <link rel="icon" href="<?= esc_url(lg_get_img_uri("/favicon.ico")); ?>" sizes="any">
