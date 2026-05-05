@@ -191,7 +191,7 @@ $works_items = [
 
                 <div class="works__support-item">
                     <h4>公開対応</h4>
-                    <p>サーバー上で実際にWebサイトを見られる状態まで対応。</p>
+                    <p>サーバー・ドメイン・DNS・SSLなどの公開設定を含め、Webサイトを本番環境で閲覧できる状態まで対応。</p>
                 </div>
             </div>
         </div>
