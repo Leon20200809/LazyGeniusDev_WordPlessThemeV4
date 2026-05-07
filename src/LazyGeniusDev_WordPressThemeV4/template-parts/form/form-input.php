@@ -28,11 +28,11 @@
             <div class="contact-row__control radio-group">
                 <label class="radio-option">
                     <input type="radio" name="subject" value="WEBページの相談・依頼" required>
-                    <span>WEB制作のご依頼・ご相談</span>
+                    <span>Webサイト制作・改修のご相談</span>
                 </label>
                 <label class="radio-option">
                     <input type="radio" name="subject" value="開発の相談">
-                    <span>業務システム等開発のご相談</span>
+                    <span>業務システム開発のご相談</span>
                 </label>
             </div>
         </div>
@@ -43,7 +43,7 @@
                 class="contact-row__control"
                 id="contact-message"
                 name="message"
-                placeholder="例）予算○○円で○○みたいなホームページできますか？"
+                placeholder="ご希望内容・お困りごと・ご予算などをご記入ください。"
                 required></textarea>
         </div>
 
