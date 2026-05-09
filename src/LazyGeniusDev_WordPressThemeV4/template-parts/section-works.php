@@ -39,7 +39,7 @@ $works_items = [
         'point' => '情報を一元管理し、Web表示とPDF印刷に再利用できる構成を意識して制作。',
         'image' => 'works-sample.webp',
         'category' => 'react',
-        'url' => $git_hub_url,
+        'url' => $git_hub_url . "/lazygenius-web-resume",
     ],
     [
         'title' => 'LG UI KIT',
