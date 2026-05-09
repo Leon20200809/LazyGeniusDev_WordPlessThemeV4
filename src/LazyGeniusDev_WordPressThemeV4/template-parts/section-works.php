@@ -59,7 +59,15 @@ $works_items = [
         'category' => 'laravel',
         'url' => $git_hub_url,
     ],
-
+    [
+        'title' => 'WordPress × Next.js ヘッドレスCMS表示デモ',
+        'text' => 'WordPressをヘッドレスCMSとして利用し、REST APIから取得した投稿データをNext.jsで表示するMVPデモです。既存のWordPress運用を活かしながら、表示部分をNext.js / Vercelに分離する構成を検証しました。',
+        'tech' => 'WordPress / REST API / Next.js / TypeScript / Tailwind CSS / Vercel',
+        'point' => 'WordPress REST APIで取得したHTML本文をNext.jsで描画し、Tailwind CSSの任意セレクタで記事本文を装飾。Vercelデプロイ時には、海外ビルド環境からのREST APIアクセス制限にも対応しました。',
+        'image' => 'works-sample.webp',
+        'category' => 'wordpress',
+        'url' => "https://wp-headless-demo-peach.vercel.app/",
+    ],
 ];
 ?>
 
