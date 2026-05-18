@@ -22,7 +22,7 @@ get_header();
 
                         <?php if (has_post_thumbnail()) : ?>
                             <div class="mb-4">
-                                <?php the_post_thumbnail('large'); ?>
+                                <?php the_post_thumbnail('medium'); ?>
                             </div>
                         <?php endif; ?>
 

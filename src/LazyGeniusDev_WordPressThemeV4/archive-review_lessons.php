@@ -23,6 +23,7 @@ get_header();
                         <article class="skills__card">
                             <h2 class="skills__name">
                                 <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('thumbnail'); ?>
                                     <?php the_title(); ?>
                                 </a>
                             </h2>
