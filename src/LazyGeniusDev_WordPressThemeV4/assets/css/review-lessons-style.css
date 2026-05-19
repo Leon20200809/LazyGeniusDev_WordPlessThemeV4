@@ -1,0 +1,407 @@
+/* ============================================================
+  Review Lessons
+  Web開発復習ノート専用CSS
+============================================================ */
+
+/* ------------------------------
+  共通レイアウト
+------------------------------ */
+
+.review-lessons {
+  padding-block: var(--space-2xl, 64px);
+  padding-inline: var(--space-l, 24px);
+}
+
+.review-lessons__inner {
+  width: min(100%, 1026px);
+  margin-inline: auto;
+}
+
+/* ------------------------------
+  Single
+------------------------------ */
+
+.review-lesson-single {
+  padding-block: var(--space-2xl, 64px);
+  padding-inline: var(--space-l, 24px);
+}
+
+.review-lesson-single__inner {
+  width: min(100%, 1026px);
+  margin-inline: auto;
+}
+
+/* 本文エリア：技術記事として読みやすい幅に絞る */
+.review-lesson-single__content {
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+/* タイトル */
+.review-lesson-single__title {
+  margin-block-start: 0;
+  margin-block-end: var(--space-xl, 32px);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.4;
+}
+
+/* メタ情報 */
+.review-lesson-single__meta {
+  margin-block-end: var(--space-xl, 32px);
+  color: var(--color-muted, #666666);
+  font-size: 0.9rem;
+}
+
+/* ------------------------------
+  Single additions
+------------------------------ */
+
+.review-lesson-single__header {
+  max-width: 860px;
+  margin-inline: auto;
+  margin-block-end: var(--space-xl, 32px);
+}
+
+.review-lesson-single__thumbnail-wrap {
+  margin-block-end: var(--space-xl, 32px);
+}
+
+.review-lesson-single__thumbnail {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-l, 16px);
+}
+
+.review-lesson-single__terms {
+  display: grid;
+  gap: var(--space-s, 8px);
+  margin-block-end: var(--space-xl, 32px);
+  color: var(--color-muted, #666666);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.review-lesson-single__term-row {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.review-lesson-single__term-label {
+  font-weight: 700;
+}
+
+.review-lesson-single__term {
+  display: inline-block;
+  margin-inline-end: 0.5em;
+}
+
+.review-lesson-single__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-m, 16px);
+  max-width: 860px;
+  margin-inline: auto;
+  margin-block-start: var(--space-2xl, 64px);
+  padding-block-start: var(--space-l, 24px);
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: var(--color-border, #dddddd);
+}
+
+.review-lesson-single__nav a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.review-lesson-single__nav-next {
+  margin-inline-start: auto;
+  text-align: right;
+}
+
+.review-lesson-single__archive-link-wrap {
+  max-width: 860px;
+  margin-inline: auto;
+  margin-block-start: var(--space-l, 24px);
+  margin-block-end: 0;
+}
+
+.review-lesson-single__archive-link {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 767px) {
+  .review-lesson-single__nav {
+    display: grid;
+    gap: var(--space-m, 16px);
+  }
+
+  .review-lesson-single__nav-next {
+    margin-inline-start: 0;
+    text-align: left;
+  }
+}
+
+/* ------------------------------
+  Gutenberg本文の最低限調整
+------------------------------ */
+
+.review-lesson-single__content h2 {
+  margin-block-start: var(--space-2xl, 64px);
+  margin-block-end: var(--space-m, 16px);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.5;
+}
+
+.review-lesson-single__content h3 {
+  margin-block-start: var(--space-xl, 32px);
+  margin-block-end: var(--space-m, 16px);
+  font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+  line-height: 1.5;
+}
+
+.review-lesson-single__content p {
+  margin-block-start: 0;
+  margin-block-end: var(--space-m, 16px);
+  line-height: 1.9;
+}
+
+.review-lesson-single__content ul,
+.review-lesson-single__content ol {
+  margin-block-start: 0;
+  margin-block-end: var(--space-l, 24px);
+  padding-inline-start: 1.5em;
+  line-height: 1.9;
+}
+
+.review-lesson-single__content li {
+  margin-block-end: var(--space-s, 8px);
+}
+
+/* ------------------------------
+  コード・pre・Highlighting Code Block対策
+------------------------------ */
+
+.review-lesson-single__content pre,
+.review-lesson-single__content .wp-block-code,
+.review-lesson-single__content .hcb_wrap {
+  overflow-x: auto;
+}
+
+/* Gutenbergのpreformatted */
+.review-lesson-single__content .wp-block-preformatted {
+  padding-block: var(--space-m, 16px);
+  padding-inline: var(--space-m, 16px);
+  border-radius: var(--radius-m, 8px);
+  background-color: var(--color-surface-subtle, #f5f5f5);
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+/* インラインコード */
+.review-lesson-single__content code {
+  padding-block: 0.1em;
+  padding-inline: 0.35em;
+  border-radius: 4px;
+  background-color: var(--color-surface-subtle, #f5f5f5);
+  font-size: 0.95em;
+}
+
+/* コードブロック内のcodeは二重装飾しない */
+.review-lesson-single__content pre code,
+.review-lesson-single__content .hcb_wrap code {
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+/* ------------------------------
+  テーブル
+------------------------------ */
+
+.review-lesson-single__content .wp-block-table {
+  overflow-x: auto;
+  margin-block: var(--space-l, 24px);
+}
+
+.review-lesson-single__content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.review-lesson-single__content th,
+.review-lesson-single__content td {
+  padding-block: var(--space-s, 8px);
+  padding-inline: var(--space-m, 16px);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-border, #dddddd);
+  text-align: left;
+  vertical-align: top;
+}
+
+.review-lesson-single__content th {
+  background-color: var(--color-surface-subtle, #f5f5f5);
+  font-weight: 700;
+}
+
+/* ------------------------------
+  区切り線
+------------------------------ */
+
+.review-lesson-single__content .wp-block-separator {
+  margin-block: var(--space-2xl, 64px);
+}
+
+/* ------------------------------
+  Archive
+------------------------------ */
+
+.review-lessons-archive {
+  padding-block: var(--space-2xl, 64px);
+  padding-inline: var(--space-l, 24px);
+}
+
+.review-lessons-archive__inner {
+  width: min(100%, 1026px);
+  margin-inline: auto;
+}
+
+.review-lessons-archive__title {
+  margin-block-start: 0;
+  margin-block-end: var(--space-xl, 32px);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.4;
+}
+
+.review-lessons-archive__list {
+  display: grid;
+  gap: var(--space-l, 24px);
+}
+
+.review-lessons-archive__item {
+  padding-block: var(--space-l, 24px);
+  padding-inline: var(--space-l, 24px);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-border, #dddddd);
+  border-radius: var(--radius-l, 16px);
+  background-color: var(--color-surface, #ffffff);
+}
+
+.review-lessons-archive__item-title {
+  margin-block-start: 0;
+  margin-block-end: var(--space-s, 8px);
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.review-lessons-archive__item-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.review-lessons-archive__item-title a:hover {
+  text-decoration: underline;
+}
+
+.review-lessons-archive__excerpt {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: var(--color-muted, #666666);
+  line-height: 1.8;
+}
+
+/* ------------------------------
+  Archive additions
+------------------------------ */
+
+.review-lessons-archive__thumbnail-link {
+  display: block;
+  margin-block-end: var(--space-m, 16px);
+}
+
+.review-lessons-archive__thumbnail {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-m, 8px);
+}
+
+.review-lessons-archive__terms {
+  display: grid;
+  gap: var(--space-s, 8px);
+  margin-block-start: var(--space-m, 16px);
+  margin-block-end: var(--space-m, 16px);
+  color: var(--color-muted, #666666);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.review-lessons-archive__term-row {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.review-lessons-archive__term-label {
+  font-weight: 700;
+}
+
+.review-lessons-archive__term {
+  display: inline-block;
+  margin-inline-end: 0.5em;
+}
+
+.review-lessons-archive__link {
+  display: inline-block;
+  margin-block-start: var(--space-s, 8px);
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.review-lessons-archive__pagination {
+  margin-block-start: var(--space-xl, 32px);
+}
+
+.review-lessons-archive__empty {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  line-height: 1.8;
+}
+
+/* ------------------------------
+  SP調整
+------------------------------ */
+
+@media (max-width: 767px) {
+  .review-lessons,
+  .review-lesson-single,
+  .review-lessons-archive {
+    padding-block: var(--space-xl, 32px);
+    padding-inline: var(--space-m, 16px);
+  }
+
+  .review-lesson-single__content {
+    max-width: 100%;
+  }
+
+  .review-lesson-single__content h2 {
+    margin-block-start: var(--space-xl, 32px);
+  }
+
+  .review-lesson-single__content .wp-block-preformatted {
+    white-space: pre;
+  }
+
+  .review-lessons-archive__item {
+    padding-block: var(--space-m, 16px);
+    padding-inline: var(--space-m, 16px);
+  }
+}
