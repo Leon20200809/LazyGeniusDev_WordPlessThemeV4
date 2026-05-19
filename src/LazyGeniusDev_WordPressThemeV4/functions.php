@@ -63,6 +63,17 @@ require_once LG_THEME_INC_PATH . '/setup.php';
 require_once LG_THEME_INC_PATH . '/enqueue.php';
 
 /**
+ * お問い合わせフォーム機能を読み込む
+ *
+ * 役割：
+ * - Ajax送信処理
+ * - バリデーション
+ * - メール送信
+ * - nonce / ajaxurl のフロント出力
+ */
+require_once LG_THEME_INC_PATH . '/contact/loader.php';
+
+/**
  * カスタム投稿タイプ・タクソノミー登録を読み込む
  *
  * 役割：

@@ -281,6 +281,7 @@
 
 .review-lessons-archive__list {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-l, 24px);
 }
 
@@ -398,6 +399,10 @@
 
   .review-lesson-single__content .wp-block-preformatted {
     white-space: pre;
+  }
+
+  .review-lessons-archive__list {
+    grid-template-columns: 1fr;
   }
 
   .review-lessons-archive__item {
