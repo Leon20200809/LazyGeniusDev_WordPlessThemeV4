@@ -1,6 +1,6 @@
 <!-- form-input.php -->
 <div class="contact-step contact-step--input">
-    <form class="contact-form" action="" method="post">
+    <form class="contact-form js-contact-form" action="" method="post">
         <div class="contact-row">
             <label class="contact-row__label" for="contact-name">お名前</label>
             <input
@@ -59,6 +59,17 @@
                     </span>
                 </label>
             </div>
+        </div>
+
+        <!-- ハニーポット -->
+        <div class="contact-form__trap" aria-hidden="true">
+            <label for="contact_website">Webサイト</label>
+            <input
+                type="text"
+                id="contact_website"
+                name="website"
+                tabindex="-1"
+                autocomplete="off">
         </div>
 
         <div class="contact-actions">
