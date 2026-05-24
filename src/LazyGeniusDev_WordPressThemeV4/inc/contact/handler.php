@@ -69,6 +69,15 @@ function lg_contact_send()
         ]);
     }
 
+    // 短時間の連続送信をチェックし、二重送信を防止
+    $antispam_result = lg_contact_check_rate_limit($form_data);
+
+    if (is_wp_error($antispam_result)) {
+        wp_send_json_error([
+            'message' => $antispam_result->get_error_message(),
+        ]);
+    }
+
     // WordPressが送信 判定待ち
     $mail_sent = lg_contact_send_admin_mail($form_data);
 
