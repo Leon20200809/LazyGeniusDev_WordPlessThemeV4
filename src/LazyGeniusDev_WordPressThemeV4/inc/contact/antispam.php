@@ -40,3 +40,26 @@ function lg_contact_check_rate_limit(array $form_data)
 
     return true;
 }
+
+/**
+ * honeypot 項目をチェックする
+ *
+ * 人間には見えない入力欄に値が入っていた場合、
+ * 自動入力ボットの可能性が高いため送信を拒否する。
+ *
+ * @param array $form_data フォーム入力値
+ * @return true|WP_Error 問題なければ true。罠項目に値があれば WP_Error。
+ */
+function lg_contact_check_honeypot(array $form_data)
+{
+    $website = sanitize_text_field($form_data['website'] ?? '');
+
+    if ($website !== '') {
+        return new WP_Error(
+            'lg_contact_honeypot_detected',
+            '送信内容を確認できませんでした。時間をおいて再度お試しください。'
+        );
+    }
+
+    return true;
+}

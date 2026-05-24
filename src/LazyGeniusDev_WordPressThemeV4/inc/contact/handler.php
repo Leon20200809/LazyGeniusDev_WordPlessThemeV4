@@ -69,6 +69,15 @@ function lg_contact_send()
         ]);
     }
 
+    // honeypotチェック
+    $honeypot_result = lg_contact_check_honeypot($form_data);
+
+    if (is_wp_error($honeypot_result)) {
+        wp_send_json_error([
+            'message' => $honeypot_result->get_error_message(),
+        ]);
+    }
+
     // 短時間の連続送信をチェックし、二重送信を防止
     $antispam_result = lg_contact_check_rate_limit($form_data);
 
