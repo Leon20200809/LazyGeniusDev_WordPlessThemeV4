@@ -1,9 +1,11 @@
 <?php
 // <!-- loader.php -->
 if (!defined('ABSPATH')) exit;
-require_once __DIR__ . '/handler.php';
+
 require_once __DIR__ . '/validate.php';
+require_once __DIR__ . '/antispam.php';
 require_once __DIR__ . '/mailer.php';
+require_once __DIR__ . '/handler.php';
 
 // ajaxurl nonce をheadに登録
 if (! function_exists('lg_print_contact_data')) :
