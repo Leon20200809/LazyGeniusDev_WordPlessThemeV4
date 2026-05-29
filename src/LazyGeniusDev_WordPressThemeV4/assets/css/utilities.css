@@ -3,7 +3,7 @@
     目的:
     - テーマ内で必要な最小限の調整クラスを用意する
     - Tailwind CSS の hidden / block / flex / mb-* などと衝突しないよう、
-      LG専用クラスには .lg-u- 接頭辞を付ける
+        LG専用クラスには .lg-u- 接頭辞を付ける
 
     注意:
     - Tailwind導入領域と共存するため、汎用名の .hidden / .block / .flex などは使わない
