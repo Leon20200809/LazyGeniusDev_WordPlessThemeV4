@@ -125,4 +125,4 @@ require_once LG_THEME_INC_PATH . '/security.php';
  *
  * 必要になったらコメントアウトを外す。
  */
-// require_once LG_THEME_INC_PATH . '/shortcodes.php';
+require_once LG_THEME_INC_PATH . '/shortcodes.php';
