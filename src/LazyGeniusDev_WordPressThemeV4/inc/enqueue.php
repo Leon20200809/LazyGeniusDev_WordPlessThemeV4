@@ -122,11 +122,22 @@ if (!function_exists('lg_enqueue_review_lab_assets')) :
 
         $manifest = json_decode(file_get_contents($manifest_path), true);
 
-        if (!is_array($manifest) || !isset($manifest['src/main.tsx'])) {
+        if (!is_array($manifest)) {
             return;
         }
 
-        $entry = $manifest['src/main.tsx'];
+        $entry = null;
+
+        foreach ($manifest as $manifest_item) {
+            if (!empty($manifest_item['isEntry'])) {
+                $entry = $manifest_item;
+                break;
+            }
+        }
+
+        if (!$entry) {
+            return;
+        }
 
         if (!empty($entry['css']) && is_array($entry['css'])) {
             foreach ($entry['css'] as $index => $css_file) {
