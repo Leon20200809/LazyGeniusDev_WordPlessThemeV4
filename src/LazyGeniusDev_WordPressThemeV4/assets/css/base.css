@@ -82,7 +82,7 @@
 
   /* Reactで作ったSPAブログページ用 */
   :root {
-    --review-lab-header-offset: 5rem;
+    --review-lab-header-offset: 2rem;
   }
   .review-lab-page {
     overflow-x: hidden;
