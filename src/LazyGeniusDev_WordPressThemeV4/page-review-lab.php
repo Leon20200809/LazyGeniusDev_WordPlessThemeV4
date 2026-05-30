@@ -20,7 +20,9 @@ if (!defined('ABSPATH')) {
 get_header();
 ?>
 
-<div id="review-lessons-app"></div>
+<div class="review-lab-page">
+    <div id="review-lessons-app"></div>
+</div>
 
 <?php
 get_footer();
