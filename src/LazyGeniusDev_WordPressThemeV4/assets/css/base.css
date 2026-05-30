@@ -79,4 +79,13 @@
     margin-inline: auto;
     padding-inline: var(--space-m);
   }
+
+  /* Reactで作ったSPAブログページ用 */
+  :root {
+    --review-lab-header-offset: 5rem;
+  }
+  .review-lab-page {
+    overflow-x: hidden;
+    padding-block-start: var(--review-lab-header-offset);
+  }
 }

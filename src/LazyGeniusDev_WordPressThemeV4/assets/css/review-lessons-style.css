@@ -6,15 +6,6 @@
 /* ------------------------------
   共通レイアウト
 ------------------------------ */
-/* Reactで作ったSPAブログページ用 */
-:root {
-  --review-lab-header-offset: 5rem;
-}
-.review-lab-page {
-  overflow-x: hidden;
-  padding-block-start: var(--review-lab-header-offset);
-}
-
 .review-lessons {
   padding-block: var(--space-2xl, 64px);
   padding-inline: var(--space-l, 24px);
