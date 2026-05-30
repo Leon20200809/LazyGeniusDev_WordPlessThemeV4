@@ -137,6 +137,32 @@ if (!function_exists('lg_enqueue_review_lab_assets')) :
                 filemtime($js_path)
             );
         }
+
+        // Highlighting Code Block 用CSS
+        wp_enqueue_style(
+            'lg-review-lab-hcb-style',
+            content_url('plugins/highlighting-code-block/build/css/hcb--light.css'),
+            [],
+            '2.2.0'
+        );
+
+        // Prism本体
+        wp_enqueue_script(
+            'lg-review-lab-prism',
+            content_url('plugins/highlighting-code-block/assets/js/prism.js'),
+            [],
+            '2.2.0',
+            true
+        );
+
+        // Highlighting Code Block 用JS
+        wp_enqueue_script(
+            'lg-review-lab-hcb-script',
+            content_url('plugins/highlighting-code-block/build/js/hcb_script.js'),
+            ['lg-review-lab-prism'],
+            '2.2.0',
+            true
+        );
     }
 endif;
 add_action('wp_enqueue_scripts', 'lg_enqueue_review_lab_assets', 5);
