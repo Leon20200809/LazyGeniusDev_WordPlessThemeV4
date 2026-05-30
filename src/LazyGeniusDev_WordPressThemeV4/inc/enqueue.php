@@ -102,8 +102,8 @@ add_action('wp_enqueue_scripts', 'lg_enqueue_review_lessons_style');
  * - 固定ページ /review-lab/
  *
  * 役割：
- * - ViteでビルドしたReactアプリのCSSを読み込む
- * - ViteでビルドしたReactアプリのJSモジュールを読み込む
+ * - Viteのmanifest.jsonを読み取り、ハッシュ付きCSS/JSを自動で読み込む
+ * - Highlighting Code Block / Prism のCSS・JSを読み込む
  *
  * @return void
  */
@@ -114,28 +114,35 @@ if (!function_exists('lg_enqueue_review_lab_assets')) :
             return;
         }
 
-        $css_path = get_theme_file_path('assets/review-lab/index-Cqt4zrNb.css');
-        $css_uri  = get_theme_file_uri('assets/review-lab/index-Cqt4zrNb.css');
+        $manifest_path = get_theme_file_path('assets/review-lab/.vite/manifest.json');
 
-        $js_path = get_theme_file_path('assets/review-lab/index-CEe9xeFt.js');
-        $js_uri  = get_theme_file_uri('assets/review-lab/index-CEe9xeFt.js');
-
-        if (file_exists($css_path)) {
-            wp_enqueue_style(
-                'lg-review-lab-style',
-                $css_uri,
-                [],
-                filemtime($css_path)
-            );
+        if (!file_exists($manifest_path)) {
+            return;
         }
 
-        if (file_exists($js_path)) {
-            wp_enqueue_script_module(
-                'lg-review-lab-app',
-                $js_uri,
-                [],
-                filemtime($js_path)
-            );
+        $manifest = json_decode(file_get_contents($manifest_path), true);
+
+        if (!is_array($manifest) || !isset($manifest['src/main.tsx'])) {
+            return;
+        }
+
+        $entry = $manifest['src/main.tsx'];
+
+        if (!empty($entry['css']) && is_array($entry['css'])) {
+            foreach ($entry['css'] as $index => $css_file) {
+                $css_path = get_theme_file_path('assets/review-lab/' . $css_file);
+
+                if (!file_exists($css_path)) {
+                    continue;
+                }
+
+                wp_enqueue_style(
+                    'lg-review-lab-style-' . $index,
+                    get_theme_file_uri('assets/review-lab/' . $css_file),
+                    [],
+                    filemtime($css_path)
+                );
+            }
         }
 
         // Highlighting Code Block 用CSS
@@ -163,6 +170,20 @@ if (!function_exists('lg_enqueue_review_lab_assets')) :
             '2.2.0',
             true
         );
+
+        // ビルド済JSは最後に読み込み
+        if (!empty($entry['file'])) {
+            $js_path = get_theme_file_path('assets/review-lab/' . $entry['file']);
+
+            if (file_exists($js_path)) {
+                wp_enqueue_script_module(
+                    'lg-review-lab-app',
+                    get_theme_file_uri('assets/review-lab/' . $entry['file']),
+                    [],
+                    filemtime($js_path)
+                );
+            }
+        }
     }
 endif;
 add_action('wp_enqueue_scripts', 'lg_enqueue_review_lab_assets', 5);
