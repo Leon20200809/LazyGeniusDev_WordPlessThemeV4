@@ -114,11 +114,11 @@ if (!function_exists('lg_enqueue_review_lab_assets')) :
             return;
         }
 
-        $css_path = get_theme_file_path('assets/review-lab/index-BktTdpR3.css');
-        $css_uri  = get_theme_file_uri('assets/review-lab/index-BktTdpR3.css');
+        $css_path = get_theme_file_path('assets/review-lab/index-Cqt4zrNb.css');
+        $css_uri  = get_theme_file_uri('assets/review-lab/index-Cqt4zrNb.css');
 
-        $js_path = get_theme_file_path('assets/review-lab/index-Ct9A9Pl6.js');
-        $js_uri  = get_theme_file_uri('assets/review-lab/index-Ct9A9Pl6.js');
+        $js_path = get_theme_file_path('assets/review-lab/index-CEe9xeFt.js');
+        $js_uri  = get_theme_file_uri('assets/review-lab/index-CEe9xeFt.js');
 
         if (file_exists($css_path)) {
             wp_enqueue_style(
